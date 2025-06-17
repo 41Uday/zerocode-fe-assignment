@@ -23,10 +23,10 @@ cd zerocode
 bash
 npm install
 3. Add Hugging Face API Key
-Create a .env file in the root directory:
+Create a .env file in the root directory and add your Hugging Face API key:
 
 env
-VITE_HF_API_KEY=your_huggingface_api_key
+VITE_HF_API_KEY=your_key_here
 4. Start development server
 
 npm run dev
