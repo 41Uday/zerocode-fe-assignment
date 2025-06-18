@@ -6,7 +6,7 @@ A fully responsive chatbot built with React, TypeScript, Tailwind CSS, and Huggi
 
 ## 🌐 Live Demo
 
-**🔗 URL**: https://zerocode-fe-chatbot.vercel.app  
+**🔗 URL**: https://zerocode-fe-assignment-bay.vercel.app
 **🧪 Test Credentials**:  
 - Username: `test`  
 - Password: `test123`
@@ -16,20 +16,19 @@ A fully responsive chatbot built with React, TypeScript, Tailwind CSS, and Huggi
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the repository
-```bash
 git clone https://github.com/41Uday/zerocode-fe-assignment.git
 cd zerocode
+
 2. Install dependencies
-bash
 npm install
-3. Add Hugging Face API Key
-Create a .env file in the root directory and add your Hugging Face API key:
 
-env
-VITE_HF_API_KEY=your_key_here
-4. Start development server
+3. Add Together API Key
+Create a .env file in the root directory and add your Together API key:
+VITE_TOGETHER_API_KEY=your_key_here
 
+5. Start development server
 npm run dev
+
 🧱 Architecture Diagram
 +-------------------+      +-----------------------+
 |   Register/Login  | ---> | LocalStorage Auth     |
@@ -37,7 +36,7 @@ npm run dev
          |                           |
          v                           v
 +-------------------+      +-----------------------+
-|     Chat Page     | ---> | HuggingFace API Call  |
+|     Chat Page     | ---> | Together API Call  |
 +-------------------+      +-----------------------+
          |
          v
@@ -53,7 +52,7 @@ zerocode/
 │   └── index.html
 ├── src/
 │   ├── api/
-│   │   └── huggingface.ts         # Hugging Face API logic
+│   │   └── together.ts            # Together API logic
 │   ├── hooks/
 │   │   └── useAuth.ts             # Authentication logic
 │   ├── pages/
@@ -67,6 +66,7 @@ zerocode/
 ├── tailwind.config.js
 ├── vite.config.ts
 └── README.md
+
 ⚙️ Features
 ✅ JWT-style Auth (localStorage)
 
@@ -97,13 +97,13 @@ Styling: Tailwind CSS
 
 Auth: localStorage (JWT-style)
 
-LLM: Hugging Face Inference API
+LLM: Together AI API
 
 Voice Input: Web Speech API
 
 Bundler: Vite
 
-Deployment: To be Update
+Deployment: Vercel
 
 👨‍💻 Author
 Built with ❤️ by Uday
