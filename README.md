@@ -1,54 +1,110 @@
-# React + TypeScript + Vite
+# 🤖 ZeroCode FE Assignment – ChatBot App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive chatbot built with React, TypeScript, Tailwind CSS, and Hugging Face API. It includes authentication, dark/light mode, voice input, auto-scroll, input history, export, and loading indicators.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+**🔗 URL**: https://zerocode-fe-chatbot.vercel.app  
+**🧪 Test Credentials**:  
+- Username: `test`  
+- Password: `test123`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Setup Instructions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Clone the repository
+```bash
+git clone https://github.com/41Uday/zerocode-fe-assignment.git
+cd zerocode
+2. Install dependencies
+bash
+npm install
+3. Add Hugging Face API Key
+Create a .env file in the root directory and add your Hugging Face API key:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+env
+VITE_HF_API_KEY=your_key_here
+4. Start development server
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+npm run dev
+🧱 Architecture Diagram
++-------------------+      +-----------------------+
+|   Register/Login  | ---> | LocalStorage Auth     |
++-------------------+      +-----------------------+
+         |                           |
+         v                           v
++-------------------+      +-----------------------+
+|     Chat Page     | ---> | HuggingFace API Call  |
++-------------------+      +-----------------------+
+         |
+         v
++-------------------+
+| Voice Input,      |
+| Export, AutoScroll|
+| Dark Mode         |
++-------------------+
+📁 Project Structure
+
+zerocode/
+├── public/
+│   └── index.html
+├── src/
+│   ├── api/
+│   │   └── huggingface.ts         # Hugging Face API logic
+│   ├── hooks/
+│   │   └── useAuth.ts             # Authentication logic
+│   ├── pages/
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   └── Chat.tsx
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── .env.example
+├── tailwind.config.js
+├── vite.config.ts
+└── README.md
+⚙️ Features
+✅ JWT-style Auth (localStorage)
+
+✅ Register & Login Pages
+
+✅ Hugging Face Chat Integration
+
+✅ Dark/Light Mode Toggle
+
+✅ Auto-scroll to Latest Message
+
+✅ Input History Stored in Chat
+
+✅ Voice-to-Text Input via Web Speech API
+
+✅ Bot Loading Indicator
+
+✅ Export Chat as .txt File
+
+✅ Fully Mobile Responsive
+
+
+
+🧰 Tech Stack
+Framework: React + TypeScript
+
+Styling: Tailwind CSS
+
+Auth: localStorage (JWT-style)
+
+LLM: Hugging Face Inference API
+
+Voice Input: Web Speech API
+
+Bundler: Vite
+
+Deployment: To be Update
+
+👨‍💻 Author
+Built with ❤️ by Uday
+Submitted for Zerocode Frontend Assignment
